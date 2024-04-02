@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:insight_news_app/core/constants/iamge_assets.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
 import 'package:insight_news_app/core/utils/text_style.dart';
+import 'package:insight_news_app/core/widgets/bottom_nav_bar.dart';
 import 'package:insight_news_app/features/home/presentation/widgets/home_header.dart';
 
 class HomeView extends StatefulWidget {
@@ -64,10 +65,12 @@ class _HomeViewState extends State<HomeView> {
                       )
                     ],
                   )),
+
               //  BottomNavBar()
             ],
           ),
         ),
+        bottomNavigationBar: const BottomNavBar(),
       ),
     );
   }
