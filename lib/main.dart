@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:insight_news_app/core/services/local_storage.dart';
-import 'package:insight_news_app/core/theme/theme_app.dart';
+import 'package:insight_news_app/core/utils/colors.dart';
 import 'package:insight_news_app/splashview.dart';
 
 void main() async {
@@ -16,7 +17,31 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: applightmode,
+        theme: ThemeData(
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                backgroundColor: AppColors.background,
+                type: BottomNavigationBarType.fixed,
+                showSelectedLabels: false,
+                showUnselectedLabels: false),
+            scaffoldBackgroundColor: AppColors.background,
+            appBarTheme: AppBarTheme(color: AppColors.background),
+            fontFamily: GoogleFonts.poppins().fontFamily,
+            inputDecorationTheme: InputDecorationTheme(
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(25),
+                  borderSide: BorderSide.none),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide.none,
+              ),
+              errorBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.zero,
+                  borderSide: BorderSide(color: Colors.red)),
+              focusedErrorBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.zero,
+                borderSide: BorderSide(color: Colors.red),
+              ),
+            )),
         debugShowCheckedModeBanner: false,
         home: const SplashView());
   }

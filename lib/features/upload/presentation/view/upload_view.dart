@@ -7,8 +7,8 @@ import 'package:insight_news_app/core/constants/iamge_assets.dart';
 import 'package:insight_news_app/core/functions/routing.dart';
 import 'package:insight_news_app/core/services/local_storage.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
+import 'package:insight_news_app/core/widgets/bottom_nav_bar.dart';
 import 'package:insight_news_app/core/widgets/custom_elev_button.dart';
-import 'package:insight_news_app/features/home/presentation/view/home_view.dart';
 
 String? path;
 String name = '';
@@ -29,7 +29,7 @@ class _UploadViewState extends State<UploadView> {
           TextButton(
               onPressed: () {
                 if (path != null && name.isNotEmpty) {
-                  pushWithReplacement(context,  const HomeView());
+                  pushWithReplacement(context,  const BottomNavBar());
                   AppLocalStorage.cashData(
                       'name', name);
                        AppLocalStorage.cashData('Image', path);
