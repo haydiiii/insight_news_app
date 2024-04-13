@@ -2,7 +2,7 @@
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:insight_news_app/core/utils/colors.dart';
 
-// final ThemeData applightmode = 
+// final ThemeData applightmode =
 // // final ThemeData appdarktmode = ThemeData(
 // //     appBarTheme: const AppBarTheme(backgroundColor: AppColors.darkBackground),
 // //     scaffoldBackgroundColor: AppColors.darkBackground,

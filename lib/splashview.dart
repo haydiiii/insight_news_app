@@ -4,7 +4,7 @@ import 'package:insight_news_app/core/constants/iamge_assets.dart';
 import 'package:insight_news_app/core/functions/routing.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
 import 'package:insight_news_app/core/utils/text_style.dart';
-import 'package:insight_news_app/features/upload/presentation/view/upload_view.dart';
+import 'package:insight_news_app/features/views/upload/presentation/view/upload_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:insight_news_app/core/constants/icon_assets.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
-import 'package:insight_news_app/features/home/presentation/view/home_view.dart';
-import 'package:insight_news_app/features/profile/presentation/view/profile_view.dart';
-import 'package:insight_news_app/features/search/presentation/view/search_view.dart';
-import 'package:insight_news_app/features/source/presentation/view/source_view.dart';
+import 'package:insight_news_app/features/views/home/presentation/view/home_view.dart';
+import 'package:insight_news_app/features/views/profile/presentation/view/profile_view.dart';
+import 'package:insight_news_app/features/views/search/presentation/view/search_view.dart';
+import 'package:insight_news_app/features/views/source/presentation/view/source_view.dart';
 
 // ignore: must_be_immutable
 class BottomNavBar extends StatefulWidget {

@@ -31,7 +31,6 @@ class CustomElevButton extends StatelessWidget {
           style: getBodyStyle(color: AppColors.white),
         ),
       ),
-      
     );
   }
 }
