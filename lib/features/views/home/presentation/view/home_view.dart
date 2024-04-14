@@ -95,10 +95,18 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 const Expanded(
                   child: TabBarView(children: [
-                    ListViewBuilder(),
-                    ListViewBuilder(),
-                    ListViewBuilder(),
-                    ListViewBuilder(),
+                    ListViewBuilder(
+                      category: 'science',
+                    ),
+                    ListViewBuilder(
+                      category: 'entertainment',
+                    ),
+                    ListViewBuilder(
+                      category: '     sports',
+                    ),
+                    ListViewBuilder(
+                      category: 'sports',
+                    ),
                   ]),
                 ),
                 // const Gap(30),
