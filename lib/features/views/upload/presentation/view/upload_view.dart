@@ -7,6 +7,7 @@ import 'package:insight_news_app/core/constants/iamge_assets.dart';
 import 'package:insight_news_app/core/functions/routing.dart';
 import 'package:insight_news_app/core/services/local_storage.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
+import 'package:insight_news_app/core/utils/text_style.dart';
 import 'package:insight_news_app/core/widgets/bottom_nav_bar.dart';
 import 'package:insight_news_app/core/widgets/custom_elev_button.dart';
 
@@ -23,6 +24,8 @@ class UploadView extends StatefulWidget {
 class _UploadViewState extends State<UploadView> {
   @override
   Widget build(BuildContext context) {
+     double screenWidth = MediaQuery.of(context).size.width;
+    double buttonWidth = screenWidth * 0.8;
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -74,14 +77,14 @@ class _UploadViewState extends State<UploadView> {
                 CustomElevButton(
                     onPressed: () => uploadImage(isCamera: true),
                     text: 'Upload From Camera ',
-                    width: 250),
+                    width: buttonWidth),
                 const Gap(15),
                 CustomElevButton(
                     onPressed: () {
                       uploadImage(isCamera: false);
                     },
                     text: 'Upload From Gallery ',
-                    width: 250),
+                    width: buttonWidth),
                 const Gap(20),
                 Divider(
                   color: AppColors.primary,
@@ -90,6 +93,7 @@ class _UploadViewState extends State<UploadView> {
                 ),
                 const Gap(15),
                 TextFormField(
+                    style: getBodyStyle(color: AppColors.white),
                     onChanged: (value) {
                       setState(() {
                         name = value;
@@ -122,3 +126,5 @@ class _UploadViewState extends State<UploadView> {
     }
   }
 }
+
+

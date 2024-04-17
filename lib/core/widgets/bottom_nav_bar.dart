@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
   List<Widget> views = [
     const HomeView(),
-    const SearchView(),
+     SearchView(),
     const SourceView(),
     const ProfileView(),
   ];

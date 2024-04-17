@@ -15,8 +15,8 @@ class HomeHeader extends StatefulWidget {
 class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
-    String? path = AppLocalStorage().getCashData('Image');
-    String? name = AppLocalStorage().getCashData('name');
+    String? path = AppLocalStorage.getCashData('Image');
+    String? name = AppLocalStorage.getCashData('name');
 
     return Row(
       //mainAxisAlignment: MainAxisAlignment.spaceBetween,

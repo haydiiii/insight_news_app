@@ -26,6 +26,7 @@ class _HomeViewState extends State<HomeView> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
