@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:insight_news_app/core/services/local_storage.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
+import 'package:insight_news_app/core/utils/text_style.dart';
 import 'package:insight_news_app/features/manager/news_cubit.dart';
 import 'package:insight_news_app/splashview.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await AppLocalStorage().init();
   runApp(
     const MainApp(),
@@ -33,8 +33,11 @@ class MainApp extends StatelessWidget {
               appBarTheme: AppBarTheme(color: AppColors.background),
               fontFamily: GoogleFonts.poppins().fontFamily,
               inputDecorationTheme: InputDecorationTheme(
+                fillColor: AppColors.cardColor,
+                filled: true,
+                hintStyle: getSmallStyle(),
                 enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide.none),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),

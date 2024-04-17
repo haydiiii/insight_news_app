@@ -1,10 +1,9 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:insight_news_app/core/constants/iamge_assets.dart';
 import 'package:insight_news_app/core/utils/colors.dart';
 import 'package:insight_news_app/core/utils/text_style.dart';
+import 'package:insight_news_app/features/views/home/presentation/widgets/carousal_slider.dart';
 import 'package:insight_news_app/features/views/home/presentation/widgets/home_header.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -18,8 +17,15 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  late final PageController _pageController;
+
   int currentIndex = 0;
   @override
+  void initState() {
+    _pageController = PageController(initialPage: currentIndex);
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -30,39 +36,13 @@ class _HomeViewState extends State<HomeView> {
             child: Column(
               children: [
                 const HomeHeader(),
-                CarouselSlider.builder(
-                    itemCount: 4,
-                    itemBuilder: (context, index, realIndex) {
-                      return Image.asset(
-                        ImagesAssets.carousal,
-                        height: 200,
-                      );
-                    },
-                    options: CarouselOptions(
-                      height: 200,
-                      aspectRatio: 16 / 9,
-                      viewportFraction: 0.8,
-                      initialPage: 0,
-                      enableInfiniteScroll: true,
-                      reverse: false,
-                      autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enlargeCenterPage: true,
-                      enlargeFactor: 0.3,
-                      onPageChanged: (index, reason) {
-                        setState(() {
-                          currentIndex = index;
-                        });
-                      },
-                      scrollDirection: Axis.horizontal,
-                    )),
+                CarousalSlider(onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                }),
                 SmoothPageIndicator(
-                  controller: PageController(
-                    initialPage: currentIndex,
-                  ),
+                  controller: _pageController,
                   count: 4,
                   axisDirection: Axis.horizontal,
                   effect: SlideEffect(
@@ -90,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
                     Tab(text: 'Science'),
                     Tab(text: 'Entertainment'),
                     Tab(text: 'Sports'),
-                    Tab(text: 'Sports'),
+                    Tab(text: 'business'),
                   ],
                 ),
                 const Expanded(
@@ -102,10 +82,10 @@ class _HomeViewState extends State<HomeView> {
                       category: 'entertainment',
                     ),
                     ListViewBuilder(
-                      category: '     sports',
+                      category: 'sports',
                     ),
                     ListViewBuilder(
-                      category: 'sports',
+                      category: 'business',
                     ),
                   ]),
                 ),
